@@ -8,6 +8,7 @@ package p61.actividad03_03.controlador;
 import java.util.List;
 import p61.actividad03_03.modelo.Pedido;
 import p61.actividad03_03.modelo.Producto;
+import p61.actividad03_03.modelo.Proveedor;
 import p61.actividad03_03.servicio.PedidoServicioImpl;
 import p61.actividad03_03.servicio.ProductoServicioImpl;
 
@@ -19,13 +20,14 @@ public class PedidoControl {
     private PedidoServicioImpl pedidoServiceImpl;
     private ProductoServicioImpl productoServiceImpl;
 
-    public void crearPedido(String[] data, Producto producto) {
+    public void crearPedido(String[] data, Producto producto,Proveedor nombreProveedor) {
 
         var retorno = ("No se pudo crear el Pedido");
         var valida = true;
         var codigo = Integer.valueOf(data[0]).intValue();
-        var nombreProveedor = data[1];
-        var mercaderia=data[2];
+        var nombreProveedor=nombreProveedor;
+        var tipoMercaderia=data[1];
+        var producto=producto
         
        
 
@@ -35,7 +37,7 @@ public class PedidoControl {
         }
 
         if (valida==true) {         
-            var pedido = new Pedido (codigo, nombreProveedor,  mercaderia);
+            var pedido = new Pedido ( codigo,  nombreProveedor, tipoDeMercaderia,  producto);
             this.pedidoServiceImpl.crear(pedido);           
         }
          
