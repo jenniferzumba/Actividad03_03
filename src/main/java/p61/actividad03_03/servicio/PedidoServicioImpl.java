@@ -13,7 +13,8 @@ import p61.actividad03_03.modelo.Pedido;
  * @author jenniferzumba
  */
 public class PedidoServicioImpl  implements PedidoService{
-    private List<Pedido> pedidoList;
+     private static List<Pedido> pedidoList = new ArrayList<>();
+
 
     public PedidoServicioImpl(List<Pedido> pedidoList) {
         this.pedidoList = new ArrayList<>();

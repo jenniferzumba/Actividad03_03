@@ -19,6 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import p61.actividad03_03.controlador.PedidoControl;
+import p61.actividad03_03.modelo.Pedido;
 
 /**
  *
@@ -39,7 +41,7 @@ public class VentanaPedidos extends JFrame implements ActionListener{
 
      public VentanaPedidos(String title) throws HeadlessException {
          super(title);
-         this.setSize(400, 600);
+         this.setSize(400, 400);
          this.setLocation(200, 100);
          this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          this.iniciarPanels();
@@ -54,6 +56,9 @@ public class VentanaPedidos extends JFrame implements ActionListener{
 
      public void iniciarPanels(){
          this.jPanelList = new ArrayList<>();
+         this.jPanelList.add(new JPanel());
+         this.jPanelList.add(new JPanel());
+         this.jPanelList.add(new JPanel());
          this.jPanelList.add(new JPanel());
          this.jPanelList.add(new JPanel());
          this.jPanelList.add(new JPanel());
@@ -98,7 +103,7 @@ public class VentanaPedidos extends JFrame implements ActionListener{
          this.jTextFieldList.add(new JTextField(20));
          
          this.jTextFieldList.get(0).addActionListener(this);
-         this.jTextFieldList.get(2).addActionListener(this);
+         this.jTextFieldList.get(1).addActionListener(this);
          
 
          this.jPanelList.get(1).add(this.jLabelList.get(0));
@@ -167,6 +172,7 @@ public class VentanaPedidos extends JFrame implements ActionListener{
 
          this.jPanelList.get(9).add(this.jComboBoxList.get(0));
          this.jPanelList.get(10).add(this.jComboBoxList.get(1));
+         
 
 
      }
@@ -212,4 +218,10 @@ public class VentanaPedidos extends JFrame implements ActionListener{
         return retorno;
     }
     
-}
+ }
+        
+
+ 
+
+    
+
